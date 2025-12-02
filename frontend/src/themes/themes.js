@@ -246,4 +246,5 @@ export const elegantPurple = createTheme({
   }
 });
 
-export default { professionalBlue, darkMode, elegantPurple };
+const themes = { professionalBlue, darkMode, elegantPurple };
+export default themes;

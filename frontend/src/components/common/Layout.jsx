@@ -22,7 +22,6 @@ import {
 } from '@mui/material';
 import {
   Menu as MenuIcon,
-  AccountCircle,
   Settings,
   Logout,
   Palette,
@@ -43,7 +42,7 @@ const Layout = () => {
   const muiTheme = useMuiTheme();
   const isMobile = useMediaQuery(muiTheme.breakpoints.down('md'));
   const { user, logout } = useAuth();
-  const { themeName, themeDisplayName, availableThemes, changeTheme, isDarkMode } = useTheme();
+  const { themeName, availableThemes, changeTheme, isDarkMode } = useTheme();
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);

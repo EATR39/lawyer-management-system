@@ -35,7 +35,6 @@ import {
   Search,
   Edit,
   Delete,
-  Visibility,
   Phone,
   Email
 } from '@mui/icons-material';

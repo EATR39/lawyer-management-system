@@ -55,8 +55,7 @@ const Templates = () => {
   const [editingTemplate, setEditingTemplate] = useState(null);
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [templateToDelete, setTemplateToDelete] = useState(null);
-  const [previewDialogOpen, setPreviewDialogOpen] = useState(false);
-  const [previewTemplate, setPreviewTemplate] = useState(null);
+
 
   // Şablon tipleri
   const templateTypes = {
@@ -364,7 +363,7 @@ const Templates = () => {
                   value={formik.values.content}
                   onChange={formik.handleChange}
                   error={formik.touched.content && Boolean(formik.errors.content)}
-                  helperText={formik.touched.content && formik.errors.content || 'Değişkenler için {{değişken_adı}} formatını kullanın'}
+                  helperText={(formik.touched.content && formik.errors.content) || 'Değişkenler için {{değişken_adı}} formatını kullanın'}
                 />
               </Grid>
               <Grid item xs={12}>
