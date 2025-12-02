@@ -1,0 +1,24 @@
+# Python Backend Dependencies
+# Avukat Yönetim Sistemi
+
+# Flask ve uzantıları
+Flask==2.3.3
+Flask-SQLAlchemy==3.0.5
+Flask-JWT-Extended==4.5.3
+Flask-CORS==4.0.0
+Flask-Migrate==4.0.5
+
+# Veritabanı
+SQLAlchemy==2.0.21
+
+# Şifreleme
+bcrypt==4.0.1
+
+# Zamanlayıcı
+APScheduler==3.10.4
+
+# Ortam değişkenleri
+python-dotenv==1.0.0
+
+# Werkzeug (Flask için güvenli dosya isimleri)
+Werkzeug==2.3.7
