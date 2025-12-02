@@ -190,7 +190,8 @@ const Login = () => {
             </Button>
           </form>
 
-          {/* Demo bilgileri */}
+          {/* Demo bilgileri - Sadece localhost geliştirme ortamı için */}
+          {/* Bu uygulama internet bağlantısı gerektirmeyen, localhost üzerinde çalışan bir sistemdir */}
           <Box sx={{ mt: 3, p: 2, bgcolor: 'grey.100', borderRadius: 1 }}>
             <Typography variant="caption" color="text.secondary" display="block">
               Demo Giriş Bilgileri:

@@ -22,7 +22,8 @@ import {
   MenuItem,
   CircularProgress,
   Alert,
-  Tooltip
+  Tooltip,
+  Snackbar
 } from '@mui/material';
 import {
   Add,
@@ -55,6 +56,7 @@ const Templates = () => {
   const [editingTemplate, setEditingTemplate] = useState(null);
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [templateToDelete, setTemplateToDelete] = useState(null);
+  const [copySuccess, setCopySuccess] = useState(false);
 
 
   // Şablon tipleri
@@ -176,9 +178,10 @@ const Templates = () => {
   const handleCopy = async (template) => {
     try {
       await navigator.clipboard.writeText(template.content);
-      // Başarı mesajı gösterilebilir
+      setCopySuccess(true);
+      setTimeout(() => setCopySuccess(false), 2000);
     } catch (err) {
-      console.error('Kopyalama hatası:', err);
+      setError('Kopyalama başarısız');
     }
   };
 
@@ -202,6 +205,13 @@ const Templates = () => {
           {error}
         </Alert>
       )}
+
+      <Snackbar
+        open={copySuccess}
+        autoHideDuration={2000}
+        onClose={() => setCopySuccess(false)}
+        message="İçerik panoya kopyalandı"
+      />
 
       <Box sx={{ mb: 3 }}>
         <TextField

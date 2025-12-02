@@ -46,6 +46,11 @@ pip install -r requirements.txt
 python run.py
 ```
 
+Geliştirme modunda çalıştırmak için:
+```bash
+FLASK_DEBUG=true python run.py
+```
+
 Backend http://localhost:5000 adresinde çalışacaktır.
 
 ### Frontend Kurulumu

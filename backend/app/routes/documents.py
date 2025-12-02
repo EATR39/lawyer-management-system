@@ -146,11 +146,19 @@ def download_document(id):
     """
     document = Document.query.get_or_404(id)
     
-    if not os.path.exists(document.file_path):
+    # Güvenlik: Dosya yolunun uploads klasörü içinde olduğunu doğrula
+    upload_folder = os.path.abspath(current_app.config['UPLOAD_FOLDER'])
+    file_path = os.path.abspath(document.file_path)
+    
+    # Directory traversal koruması
+    if not file_path.startswith(upload_folder):
+        return jsonify({'message': 'Geçersiz dosya yolu'}), 403
+    
+    if not os.path.exists(file_path):
         return jsonify({'message': 'Dosya bulunamadı'}), 404
     
     return send_file(
-        document.file_path,
+        file_path,
         as_attachment=True,
         download_name=document.original_filename
     )
